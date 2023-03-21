@@ -3,7 +3,7 @@ from flask_socketio import SocketIO, emit, join_room
 import platform
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "wubba lubba dub dub"
+app.config['SECRET_KEY'] = '3eae93d238d874d533cd04d2044ec96928fa6aaf792b47946cdfd5d95dd329e0'
 
 socketio = SocketIO(app)
 
@@ -12,7 +12,7 @@ rooms_sid = {}
 names_sid = {}
 
 
-@app.route("/join", methods=["GET"])
+@app.route("/", methods=["GET"])
 def join():
     display_name = request.args.get('display_name')
     mute_audio = request.args.get('mute_audio') # 1 or 0
